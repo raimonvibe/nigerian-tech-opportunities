@@ -16,7 +16,8 @@ import {
   ExternalLink,
   ChevronDown,
   Menu,
-  X
+  X,
+  Info
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -28,6 +29,7 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu'
 import { Badge } from '@/components/ui/badge'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -49,42 +51,48 @@ function App() {
       description: "One of the most prestigious tech training programs in Africa",
       category: "Premium Bootcamp",
       link: "https://andela.com/",
-      icon: <Award className="w-6 h-6" />
+      icon: <Award className="w-6 h-6" />,
+      infoContent: "Visit Andela to apply for their intensive software development program. You can browse available courses, check eligibility requirements, submit your application, and access free preparatory materials. They offer full-time bootcamps with job placement assistance."
     },
     {
       name: "Decagon Institute",
       description: "Intensive software development bootcamp with job placement",
       category: "Coding Bootcamp",
       link: "https://decagon.institute/",
-      icon: <Code className="w-6 h-6" />
+      icon: <Code className="w-6 h-6" />,
+      infoContent: "Explore Decagon's coding bootcamp programs where you can apply for full-stack development training. Check their curriculum, read success stories, apply for scholarships, and learn about their job guarantee program for graduates."
     },
     {
       name: "HNG Internship",
       description: "Remote internship program for developers with real projects",
       category: "Internship",
       link: "https://hng.tech/",
-      icon: <Users className="w-6 h-6" />
+      icon: <Users className="w-6 h-6" />,
+      infoContent: "Join HNG's remote internship program by registering for their next cohort. You can participate in real projects, collaborate with other developers, build your portfolio, and potentially get hired by partner companies."
     },
     {
       name: "AltSchool",
       description: "Modern tech education platform with flexible learning",
       category: "Online Platform",
       link: "https://altschoolafrica.com/",
-      icon: <BookOpen className="w-6 h-6" />
+      icon: <BookOpen className="w-6 h-6" />,
+      infoContent: "Explore AltSchool's flexible learning programs where you can enroll in various tech courses, access live classes and recorded sessions, join study groups, and get mentorship from industry professionals."
     },
     {
       name: "Digital Skills Nigeria (DSN)",
       description: "Microsoft-led initiative supporting ages 16-35 with tech training",
       category: "Government Program",
       link: "https://www.digitalskillsnigeria.org/",
-      icon: <GraduationCap className="w-6 h-6" />
+      icon: <GraduationCap className="w-6 h-6" />,
+      infoContent: "Access free Microsoft-certified training programs. You can register for courses in cloud computing, data analysis, and digital marketing, take certification exams, and access job placement opportunities through government partnerships."
     },
     {
       name: "Tech4Dev",
       description: "Digital skills and entrepreneurship training across Africa",
       category: "NGO Program",
       link: "https://tech4dev.com/",
-      icon: <Target className="w-6 h-6" />
+      icon: <Target className="w-6 h-6" />,
+      infoContent: "Apply for Tech4Dev's programs focused on women and youth empowerment. You can join coding bootcamps, entrepreneurship training, access mentorship programs, and apply for grants to start your tech business."
     }
   ]
 
@@ -94,28 +102,32 @@ function App() {
       description: "Entrepreneurship funding and mentorship for African startups",
       amount: "$5,000 - $25,000",
       link: "https://www.tonyelumelufoundation.org/",
-      icon: <DollarSign className="w-6 h-6" />
+      icon: <DollarSign className="w-6 h-6" />,
+      infoContent: "Apply for the Tony Elumelu Entrepreneurship Programme where you can submit your business plan, access the online application portal, participate in the 12-week training program, and receive $5,000 seed funding plus mentorship."
     },
     {
       name: "ALX Africa Scholarships",
       description: "Access to world-class tech and professional training programs",
       amount: "Full Scholarships",
       link: "https://www.alxafrica.com/",
-      icon: <Award className="w-6 h-6" />
+      icon: <Award className="w-6 h-6" />,
+      infoContent: "Browse ALX's scholarship opportunities for software engineering, data science, and leadership programs. You can apply for full scholarships, access their learning platform, join peer learning groups, and get career support."
     },
     {
       name: "RAIN 2025 Scholarship",
       description: "Full scholarships for robotics and AI expertise development",
       amount: "Full Funding",
       link: "https://www.globalsouthopportunities.com/",
-      icon: <Rocket className="w-6 h-6" />
+      icon: <Rocket className="w-6 h-6" />,
+      infoContent: "Find and apply for RAIN 2025 scholarships focused on robotics and AI. You can search for available programs, check eligibility criteria, submit applications, and access preparatory resources for advanced tech education."
     },
     {
       name: "Greenhouse Capital",
       description: "Startup funding for early-stage tech companies",
       amount: "$5,000 - $25,000",
       link: "https://greenhouse.capital/",
-      icon: <Building className="w-6 h-6" />
+      icon: <Building className="w-6 h-6" />,
+      infoContent: "Pitch your startup to Greenhouse Capital by submitting your business plan, accessing their application process, preparing for investor meetings, and potentially securing seed funding for your tech startup."
     }
   ]
 
@@ -125,28 +137,32 @@ function App() {
       description: "Nigeria's leading tech innovation center and startup incubator",
       location: "Lagos, Abuja",
       link: "https://cchubnigeria.com/",
-      icon: <Building className="w-6 h-6" />
+      icon: <Building className="w-6 h-6" />,
+      infoContent: "Join CcHUB's innovation ecosystem where you can apply for incubation programs, access co-working spaces, attend tech events and workshops, network with other entrepreneurs, and get mentorship from industry experts."
     },
     {
       name: "Google Launchpad Accelerator",
       description: "Google's startup acceleration program for African entrepreneurs",
       location: "Lagos",
       link: "https://developers.google.com/community/launchpad",
-      icon: <Rocket className="w-6 h-6" />
+      icon: <Rocket className="w-6 h-6" />,
+      infoContent: "Apply for Google's accelerator program where you can access Google's resources, get mentorship from Google engineers, participate in intensive training sessions, and potentially receive funding and global exposure."
     },
     {
       name: "ARM Labs Lagos",
       description: "International accelerator program with global network",
       location: "Lagos",
       link: "https://www.arm.com.ng/armlabs/",
-      icon: <Globe className="w-6 h-6" />
+      icon: <Globe className="w-6 h-6" />,
+      infoContent: "Join ARM Labs' accelerator program to access international markets, get mentorship from global experts, participate in demo days, connect with international investors, and scale your startup globally."
     },
     {
       name: "Wennovation Hub",
       description: "Innovation hub focusing on technology and entrepreneurship",
       location: "Abuja",
       link: "https://ng.linkedin.com/company/wennovationhub",
-      icon: <Users className="w-6 h-6" />
+      icon: <Users className="w-6 h-6" />,
+      infoContent: "Connect with Wennovation Hub to access their innovation programs, join entrepreneurship training, participate in hackathons and competitions, access co-working facilities, and network with the Abuja tech community."
     }
   ]
 
@@ -156,23 +172,46 @@ function App() {
       description: "Ambitious government plan to train 20 million youths by 2030",
       agency: "Federal Government",
       link: "https://nitda.gov.ng/",
-      icon: <Target className="w-6 h-6" />
+      icon: <Target className="w-6 h-6" />,
+      infoContent: "Register for government-sponsored digital skills training through NITDA. You can enroll in free courses, access certification programs, find job placement opportunities, and participate in the national digital transformation initiative."
     },
     {
       name: "NITDA Partnerships",
       description: "Various collaborations with international tech companies",
       agency: "NITDA",
       link: "https://nitda.gov.ng/",
-      icon: <Building className="w-6 h-6" />
+      icon: <Building className="w-6 h-6" />,
+      infoContent: "Explore NITDA's partnerships with global tech companies where you can access training programs, apply for internships with international firms, get certified in emerging technologies, and benefit from public-private collaborations."
     },
     {
       name: "Youth Employability Booster",
       description: "2023-2027 initiative by Young Africa International, funded by Mastercard Foundation",
       agency: "Young Africa International",
       link: "https://youngafrica.org/youth-employability-booster/",
-      icon: <Users className="w-6 h-6" />
+      icon: <Users className="w-6 h-6" />,
+      infoContent: "Apply for the Youth Employability Booster program where you can access skills training, get job placement support, receive entrepreneurship mentoring, and benefit from Mastercard Foundation's investment in African youth development."
     }
   ]
+
+  const InfoModal = ({ title, content, isDarkMode }: { title: string; content: string; isDarkMode: boolean }) => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="ghost" size="sm" className="p-1 h-8 w-8">
+          <Info className="w-4 h-4" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className={`max-w-md ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+        <DialogHeader>
+          <DialogTitle className={isDarkMode ? 'text-white' : 'text-gray-900'}>
+            About {title}
+          </DialogTitle>
+        </DialogHeader>
+        <DialogDescription className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
+          {content}
+        </DialogDescription>
+      </DialogContent>
+    </Dialog>
+  )
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
@@ -391,12 +430,15 @@ function App() {
                     }`}>
                       {program.description}
                     </CardDescription>
-                    <Button asChild variant="outline" className="w-full">
-                      <a href={program.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                        Learn More
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </a>
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button asChild variant="outline" className="flex-1">
+                        <a href={program.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                          Learn More
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                      </Button>
+                      <InfoModal title={program.name} content={program.infoContent} isDarkMode={isDarkMode} />
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -439,12 +481,15 @@ function App() {
                     }`}>
                       {funding.description}
                     </CardDescription>
-                    <Button asChild className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
-                      <a href={funding.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                        Apply Now
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </a>
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button asChild className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
+                        <a href={funding.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                          Apply Now
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                      </Button>
+                      <InfoModal title={funding.name} content={funding.infoContent} isDarkMode={isDarkMode} />
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -487,12 +532,15 @@ function App() {
                     }`}>
                       {incubator.description}
                     </CardDescription>
-                    <Button asChild variant="outline" className="w-full">
-                      <a href={incubator.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                        Visit Program
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </a>
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button asChild variant="outline" className="flex-1">
+                        <a href={incubator.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                          Visit Program
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                      </Button>
+                      <InfoModal title={incubator.name} content={incubator.infoContent} isDarkMode={isDarkMode} />
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -535,12 +583,15 @@ function App() {
                     }`}>
                       {initiative.description}
                     </CardDescription>
-                    <Button asChild variant="outline" className="w-full">
-                      <a href={initiative.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                        Learn More
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </a>
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button asChild variant="outline" className="flex-1">
+                        <a href={initiative.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                          Learn More
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                      </Button>
+                      <InfoModal title={initiative.name} content={initiative.infoContent} isDarkMode={isDarkMode} />
+                    </div>
                   </CardContent>
                 </Card>
               ))}
