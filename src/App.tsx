@@ -197,7 +197,7 @@ function App() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="ghost" size="sm" className="p-1 h-8 w-8">
-          <Info className="w-4 h-4" />
+          <Info className={`w-4 h-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`} />
         </Button>
       </DialogTrigger>
       <DialogContent className={`max-w-md ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
