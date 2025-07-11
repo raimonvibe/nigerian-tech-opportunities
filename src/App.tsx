@@ -622,7 +622,7 @@ function App() {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="https://discord.gg/nigerian-developers" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                <a href="https://chat.whatsapp.com/HESiDNIIjwrKWMnvGnzp3y?mode=r_c" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                   <Users className="w-5 h-5 mr-2" />
                   Join Tech Communities
                   <ExternalLink className="w-4 h-4 ml-2" />
