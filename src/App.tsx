@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-import { 
-  Moon, 
-  Sun, 
-  GraduationCap, 
-  DollarSign, 
-  Rocket, 
-  Building, 
-  Globe, 
-  Users, 
-  Code, 
-  BookOpen, 
-  Award, 
+import {
+  Moon,
+  Sun,
+  GraduationCap,
+  DollarSign,
+  Rocket,
+  Building,
+  Globe,
+  Users,
+  Code,
+  BookOpen,
+  Award,
   Target,
   ExternalLink,
   ChevronDown,
@@ -22,11 +22,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { Badge } from '@/components/ui/badge'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
@@ -215,14 +215,14 @@ function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
-      isDarkMode 
-        ? 'bg-black text-white' 
+      isDarkMode
+        ? 'bg-black text-white'
         : 'bg-amber-50 text-gray-900'
     }`}>
       {/* Header */}
       <header className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
-        isDarkMode 
-          ? 'bg-black/90 border-gray-800 backdrop-blur-sm' 
+        isDarkMode
+          ? 'bg-black/90 border-gray-800 backdrop-blur-sm'
           : 'bg-amber-50/90 border-amber-200 backdrop-blur-sm'
       }`}>
         <div className="container mx-auto px-4 py-4">
@@ -339,8 +339,8 @@ function App() {
 
       {/* Hero Section */}
       <section className={`py-20 ${
-        isDarkMode 
-          ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900' 
+        isDarkMode
+          ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
           : 'bg-gradient-to-br from-amber-100 via-orange-50 to-yellow-100'
       }`}>
         <div className="container mx-auto px-4 text-center">
@@ -351,7 +351,7 @@ function App() {
             <p className={`text-xl md:text-2xl mb-8 ${
               isDarkMode ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Discover comprehensive opportunities, funding, education, and support systems 
+              Discover comprehensive opportunities, funding, education, and support systems
               designed to empower the next generation of Nigerian tech innovators.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -359,7 +359,7 @@ function App() {
                 <Rocket className="w-5 h-5 mr-2" />
                 Start Your Journey
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className={`${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                 <BookOpen className="w-5 h-5 mr-2" />
                 Explore Programs
               </Button>
@@ -403,7 +403,7 @@ function App() {
                 Transform your career with world-class tech education programs designed for Nigerian youth.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {educationalPrograms.map((program, index) => (
                 <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 ${
@@ -456,7 +456,7 @@ function App() {
                 Access financial support to kickstart your tech career and entrepreneurial journey.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {fundingOpportunities.map((funding, index) => (
                 <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 ${
@@ -507,7 +507,7 @@ function App() {
                 Join Nigeria&apos;s thriving startup ecosystem with world-class incubation programs.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {incubators.map((incubator, index) => (
                 <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 ${
@@ -558,7 +558,7 @@ function App() {
                 Leverage government-backed programs designed to boost Nigeria's digital economy.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {governmentInitiatives.map((initiative, index) => (
                 <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 ${
@@ -601,8 +601,8 @@ function App() {
 
         {/* Call to Action Section */}
         <section className={`mt-16 py-12 rounded-2xl ${
-          isDarkMode 
-            ? 'bg-gradient-to-r from-gray-800 to-gray-900' 
+          isDarkMode
+            ? 'bg-gradient-to-r from-gray-800 to-gray-900'
             : 'bg-gradient-to-r from-blue-50 to-purple-50'
         }`}>
           <div className="text-center px-8">
@@ -610,11 +610,11 @@ function App() {
             <p className={`text-lg mb-8 max-w-2xl mx-auto ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Nigeria's tech ecosystem is rapidly growing with strong government support, 
+              Nigeria's tech ecosystem is rapidly growing with strong government support,
               international partnerships, and a vibrant startup community. The time to act is now.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+n top:              <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                 <a href="https://wellfound.com/jobs" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                   <Globe className="w-5 h-5 mr-2" />
                   Explore Remote Opportunities
@@ -635,8 +635,8 @@ function App() {
 
       {/* Footer */}
       <footer className={`mt-16 py-8 border-t ${
-        isDarkMode 
-          ? 'bg-gray-900 border-gray-800' 
+        isDarkMode
+          ? 'bg-gray-900 border-gray-800'
           : 'bg-white border-gray-200'
       }`}>
         <div className="container mx-auto px-4 text-center">
